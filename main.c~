@@ -16,15 +16,12 @@ void process_data(FILE *input_file) {
     // is an already-open file.  you can read data from it using
     // the fgets() C library function.  close it with the fclose()
     // built-in function
-
-	//CPU time starting stuff
 	struct rusage userUsage, systemUsage;
 	struct timeval userStart, userEnd, systemStart, systemEnd;
 	getrusage(RUSAGE_SELF, &userUsage);
 	getrusage(RUSAGE_SELF, &systemUsage);
 	userStart = userUsage.ru_utime;
 	systemStart = systemUsage.ru_stime;
-
 /* //this is from when we tried to be fancy
 	//input from stdin
 	if(input_file == stdin) {
@@ -72,7 +69,6 @@ void process_data(FILE *input_file) {
 	//list_print(head);
 	list_sort(&head);
 	
-	//CPU time ending stuff
 	getrusage(RUSAGE_SELF, &userUsage);
 	getrusage(RUSAGE_SELF, &systemUsage);
 	systemEnd = systemUsage.ru_stime;

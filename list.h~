@@ -28,6 +28,6 @@ struct node *find_largest(struct node *list);
 void list_sort(struct node **head);
 void list_print(const struct node *list);
 
-void printStats(struct node *head, float timeUser, float timeOS);
+void printStats(struct node *head, int timeUser, int timeOS);
 
 #endif // __LIST_H__

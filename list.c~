@@ -146,22 +146,6 @@ void list_insert(struct node *new, struct node **head) {
     *head = new;
 }
 
-//from list_solution.c
-void list_unlink(struct node *dead, struct node **head) {
-    // just unlink the dead node; don't free it
-    if (*head == dead) {
-        *head = (*head)->next;
-        return;
-    }
-    struct node *tmp = *head;
-    while (tmp->next != NULL) {
-        if (tmp->next == dead) {
-            tmp->next = dead->next;
-            return;
-        }
-        tmp = tmp->next;
-    }
-}
 
 //modified version (to work with ints) from list_solution.c
 struct node *find_largest(struct node *list) {
